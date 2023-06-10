@@ -2,7 +2,113 @@
 <html>
 <head>
     <title>Apology</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            color: #FFFFFF;
+            padding: 20px;
+            font-weight: bold;
+            font-style: italic;
+            background-color: #175d9b; /* Change the background color to #175d9b */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h2 {
+            font-size: 40px;
+            margin-top: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .signature {
+            font-weight: bold;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 18px;
+            color: #FFFFFF;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .background img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8; /* Adjust the opacity as needed */
+        }
+
+        .content {
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(23, 93, 155, 0.6); /* Adjust the transparency as needed */
+        }
+
+        .heart {
+            animation: heartbeat 1s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .animated-heart {
+            fill: #FF4E50;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var heart = document.querySelector('.heart');
+            heart.addEventListener('click', function() {
+                heart.classList.add('animated-heart');
+                setTimeout(function() {
+                    heart.classList.remove('animated-heart');
+                }, 1000);
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="background">
@@ -21,7 +127,5 @@
             <p>Your Dump Boyfriend :(</p>
         </div>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
